@@ -3,7 +3,7 @@ import React from 'react';
 import {
   ImageBackground,
   StyleSheet,
-  ScrollView,
+  Image,
   View,
   Text,
   Button
@@ -24,6 +24,11 @@ const TutorialPage4 = () => {
                 <Text style = {styles.score}>Score: 1400</Text>
                 <Text style = {styles.question}>Q: 0/100</Text>
               </View>
+              <View style={styles.imageWrapper}>
+                <Image style={styles.image1} source = {require('./Image/snake.png')}/>
+                <Image style={styles.image2} source = {require('./Image/rock-raw.png')}/>
+              </View>
+
               <View style = {styles.tutorialWrapper}>
                 <Text style={styles.tutorialHeader}>Avoid rocks! They’re not food.</Text>
                 <Text style={styles.tutorialContent}>Eating a rock will disable your actions for 4 seconds. Leaving you to burn freely!</Text>
@@ -56,6 +61,24 @@ const styles = StyleSheet.create({
     fontFamily: "Fredoka One",
     fontWeight: "400",
     fontSize: 40,
+  },
+  imageWrapper:{
+    marginTop: 20,
+    paddingLeft: 30,
+    justifyContent:"center",
+    alignItems:"center",
+    height: 300,
+  },
+  image1:{
+    resizeMode:'contain',
+    height: 300,
+    width: 400,
+  },
+  image2:{
+    marginRight: 20,
+    resizeMode:'contain',
+    height: 50,
+    width: 50,
   },
   velocity:{
     color: "white",

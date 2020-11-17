@@ -16,7 +16,7 @@ const LandingPage = () => {
               <Text style= {styles.name}>FreeFall</Text>
             </View>
             <View style={styles.buttonContainer}>
-              <Button style={styles.button1} title="Start"/>
+              <Button style={styles.button} title="Start"/>
               <Button style={styles.button} title="Tutorial"/>
             </View>
 

@@ -3,7 +3,7 @@ import React from 'react';
 import {
   ImageBackground,
   StyleSheet,
-  ScrollView,
+  Image,
   View,
   Text,
   Button
@@ -23,6 +23,14 @@ const TutorialPage3 = () => {
               <View style = {styles.headerWrapper1}>
                 <Text style = {styles.score}>Score: 1400</Text>
                 <Text style = {styles.question}>Q: 0/100</Text>
+              </View>
+              <View style={styles.imageWrapper}>
+                <Image style={styles.image1} source = {require('./Image/snake.png')}/>
+              </View>
+              <View style = {styles.cloudImageWrapper}>
+                <Image style={styles.cloudImage} source = {require('./Image/cloud.png')}/>
+                <Image style={styles.cloudImage2} source = {require('./Image/cloud.png')}/>
+                <Image style={styles.cloudImage3} source = {require('./Image/cloud.png')}/>
               </View>
               <View style = {styles.tutorialWrapper}>
                 <Text style={styles.tutorialHeader}>Eat some clouds for knowledge!</Text>
@@ -50,6 +58,37 @@ const styles = StyleSheet.create({
   headerWrapper1:{
     flexDirection: "row",
     justifyContent: "space-between",
+  },
+  imageWrapper:{
+    marginTop: 20,
+    paddingLeft: 30,
+    justifyContent:"center",
+    alignItems:"center",
+    height: 200,
+  },
+  image1:{
+    resizeMode:'contain',
+    height: 250,
+    width: 400,
+  },
+  cloudImageWrapper:{
+    height: 200,
+  },
+  cloudImage:{
+    marginLeft: 20,
+    height: 50,
+    width: 100,
+  },
+  cloudImage2:{
+    height: 50,
+    alignSelf: "flex-end",
+    marginRight: 50,
+    width: 100,
+  },
+  cloudImage3:{
+    height: 50,
+    marginLeft: 100,
+    width: 100,
   },
   planetName:{
     color: "white",
