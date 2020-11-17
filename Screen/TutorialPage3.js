@@ -10,7 +10,7 @@ import {
 } from 'react-native';
 
 
-const TutorialPage5 = () => {
+const TutorialPage3 = () => {
   return (
       <View style={styles.container}> 
         <ImageBackground source = {require('./Image/background.png')} style={styles.background} >
@@ -25,8 +25,8 @@ const TutorialPage5 = () => {
                 <Text style = {styles.question}>Q: 0/100</Text>
               </View>
               <View style = {styles.tutorialWrapper}>
-                <Text style={styles.tutorialHeader}>Eat apples for Quizzes!</Text>
-                <Text style={styles.tutorialContent}>Test your understanding of each terrain. Complete 100 Quizzes on a terrain to demonstrate your knowledge! Every quiz answered correctly will decrease the speed of free falling!</Text>
+                <Text style={styles.tutorialHeader}>Eat some clouds for knowledge!</Text>
+                <Text style={styles.tutorialContent}>Receive a “Did You Know?” pop-up everytime your snake meets the cloud. Gather knowledge for the “Apple” quiz!</Text>
               </View>
             </View>
         </ImageBackground>          
@@ -113,4 +113,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default TutorialPage5;
+export default TutorialPage3;

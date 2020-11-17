@@ -10,7 +10,7 @@ import {
 } from 'react-native';
 
 
-const TutorialPage5 = () => {
+const TutorialPage2 = () => {
   return (
       <View style={styles.container}> 
         <ImageBackground source = {require('./Image/background.png')} style={styles.background} >
@@ -25,8 +25,8 @@ const TutorialPage5 = () => {
                 <Text style = {styles.question}>Q: 0/100</Text>
               </View>
               <View style = {styles.tutorialWrapper}>
-                <Text style={styles.tutorialHeader}>Eat apples for Quizzes!</Text>
-                <Text style={styles.tutorialContent}>Test your understanding of each terrain. Complete 100 Quizzes on a terrain to demonstrate your knowledge! Every quiz answered correctly will decrease the speed of free falling!</Text>
+                <Text style={styles.tutorialHeader}>This Is Your Character </Text>
+                <Text style={styles.tutorialContent}>Use the Left and Right navigation arrows to move your snake. Your snake’s length decreases every 2 seconds due to fire! The degree of reduction depends on current free falling speed!</Text>
               </View>
             </View>
         </ImageBackground>          
@@ -113,4 +113,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default TutorialPage5;
+export default TutorialPage2;
