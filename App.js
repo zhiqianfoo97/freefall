@@ -1,176 +1,97 @@
+import React, {PureComponent} from 'react';
+import {StatusBar, StyleSheet, View, Text, Alert, Button} from 'react-native';
+import Entities from './src/entities';
+import {GameEngine} from 'react-native-game-engine';
+import Systems from './src/systems';
 
-import React from 'react';
-import {
-  ImageBackground,
-  StyleSheet,
-  Image,
-  View,
-  Text,
-  Button,
-  Dimensions
-} from 'react-native';
 
-const win = Dimensions.get('window');
-const TutorialPage6 = () => {
-  return (
-      <View style={styles.container}> 
-        <ImageBackground source = {require('./Image/background.png')} style={styles.background} >
-          <View style = {styles.wrapper}>
-            <View style = {styles.headerWrapper}>
-                <Text style={styles.planetName}>Terra</Text>
-                <Text style={styles.velocity}>v = 140m/s</Text>
-                <Text style={styles.gravity}>g = 9.81m/s^2</Text>
-              </View>
-              <View style = {styles.headerWrapper1}>
-                <Text style = {styles.score}>Score: 1400</Text>
-                <Text style = {styles.question}>Q: 0/100</Text>
-              </View>
-              <View style={styles.imageWrapper}>
-                <Image style={styles.image1} source = {require('./Image/snake.png')}/>
-                <Image style={styles.image2} source = {require('./Image/rock-raw.png')}/>
-              </View>
-              <View style = {styles.cloudImageWrapper}>
-                <Image style={styles.cloudImage} source = {require('./Image/cloud.png')}/>
-                <Image style={styles.cloudImage2} source = {require('./Image/cloud.png')}/>
-                <Image style={styles.cloudImage3} source = {require('./Image/cloud.png')}/>
-                <Image style={styles.image3} source = {require('./Image/apple.png')}/>
-              </View>
-            
-              
-              <View style = {styles.tutorialWrapper}>
-                <Text style={styles.tutorialHeader}>Let’s START!</Text>
-                <Button style={styles.button} title="Start"/>
-              </View>
+export default class App extends PureComponent {
+  constructor(props) {
+    super(props);
+    this.state = {
+      running: true,
+      score: 0
+    };
+    this.gameEngine = null;
+    console.disableYellowBox = true;
+  }
+
+  onEvent = e => {
+    if (e.type === 'gameOver') {
+      this.setState({
+        running: false,
+      });
+    } else if (e.type === 'score') {
+      this.setState(prevState => {
+        return {score: prevState.score + 1};
+      });
+    }
+  };
+
+  restart = () => {
+    this.setState({running: true, score: 0});
+    this.gameEngine.swap(Entities());
+  };
+
+  render() {
+    return (
+      <View style={styles.container}>
+        <GameEngine
+          ref={ref => {
+            this.gameEngine = ref;
+          }}
+          style={styles.gameContainer}
+          entities={Entities()}
+          running={this.state.running}
+          systems={Systems}
+          onEvent={this.onEvent}
+          >
+          <StatusBar hidden={true} />
+        </GameEngine>
+        {this.state.running ? (
+           <Text style={styles.score}>{this.state.score}</Text>   
+        ) : (
+          <View style={styles.centerButton}>
+            <Text style={{color:'red'}}>Score: {this.state.score}</Text>
+            <View style={styles.inView}>
+              <Button title='OK' onPress={()=> this.setState({running: true})}></Button>
+              <Button title="Restart" onPress={this.restart}></Button>
             </View>
-        </ImageBackground>          
+          </View>
+        )}
       </View>
-  );
-};
+    );
+  }
+}
 
 const styles = StyleSheet.create({
-  container:{
+  container: {
     flex: 1,
+    backgroundColor: '#000',
   },
-  wrapper:{
-    padding: 20,
-    flex: 1,
-    flexDirection: "column",
+  gameContainer: {
+    position: 'absolute',
+    top: 0,
+    bottom: 0,
+    left: 0,
+    right: 0,
   },
-  headerWrapper:{
-    flexDirection: "row",
-    justifyContent: "space-between",
-  },
-  headerWrapper1:{
-    flexDirection: "row",
-    justifyContent: "space-between",
-  },
-  planetName:{
-    color: "white",
-    fontFamily: "Fredoka One",
-    fontWeight: "400",
-    fontSize: 40,
-  },
-  imageWrapper:{
-    marginTop: 20,
-    paddingLeft: 30,
-    justifyContent:"center",
-    alignItems:"center",
-    height: 200,
-  },
-  image1:{
-    resizeMode:'contain',
-    height: 250,
-    width: 400,
-  },
-  image2:{
-    marginRight: 20,
-    resizeMode:'contain',
-    height: 50,
-    width: 50,
-  },
-  image3:{
-    position: "absolute",
-    left: 300,
-    resizeMode:'contain',
-    height: 50,
-    width: 50,
-  },
-  appleImageWrapper:{
-    height: 50,
-  },
-  cloudImageWrapper:{
-    height: 200,
-  },
-  cloudImage:{
-    marginLeft: 20,
-    height: 50,
-    width: 100,
-  },
-  cloudImage2:{
-    height: 50,
-    alignSelf: "flex-end",
-    marginRight: 50,
-    width: 100,
-  },
-  cloudImage3:{
-    height: 50,
-    marginLeft: 100,
-    width: 100,
-  },
-  velocity:{
-    color: "white",
-    fontFamily: "Roboto",
-    fontWeight: "400",
-    fontSize: 20,
-    marginTop: 15,
-  },
-  gravity:{
-    color: "white",
-    fontFamily: "Roboto",
-    fontWeight: "400",
-    fontSize: 20,
-    marginTop: 15,
-  },
-  score: {
-    color: "white",
-    fontFamily: "Roboto",
-    fontWeight: "400",
-    fontSize: 25,
-    color: 'rgba(255,100,124,1)',
-  },
-  question:{
-    color: "white",
-    fontFamily: "Roboto",
-    fontWeight: "400",
-    fontSize: 25,
-    color: 'rgba(144,218,251,1)',
-  },
-  tutorialHeader:{
-    color: "white",
-    fontFamily: "Roboto",
-    fontWeight: "400",
-    flexWrap: 'wrap',
-    fontSize: 30,
-    textAlign: "center",
-  },
-  background:{
-    flex: 1,
-    width: '100%',
-    height: '100%',
-  },
-  tutorialWrapper:{
-    padding:20,
-    width: win.width,
-    justifyContent:"space-between",
-    position: "absolute",
-    bottom: 20,
-    paddingLeft: 40,
+  centerButton:{
+    position: 'absolute',
+    top: '50%',
+    left: '25%',
+    backgroundColor: 'white',
+    width: 150,
     height: 150,
+    flexDirection: 'column',
+    justifyContent: 'space-between',
+    elevation: 3,
+    
+    //zIndex: '100'
+    
   },
-  button:{
-    borderRadius: 200,
-    padding: 20,
+  inView: {
+    flexDirection: 'row',
+    justifyContent: 'space-between'
   }
 });
-
-export default TutorialPage6;
