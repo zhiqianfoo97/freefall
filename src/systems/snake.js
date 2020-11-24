@@ -1,21 +1,22 @@
 import Matter from 'matter-js';
 import {Dimensions} from 'react-native';
-const {height, width} = Dimensions.get('window');
-const UpdatePlane = (entities, {touches, time}) => {
+import Constants from '../utils/constants';
+
+const UpdateSnake = (entities, {touches, time}) => {
   const engine = entities.physics.engine;
   touches
     .filter(t => t.type === 'start' || t.type === 'end')
     .forEach(t => {
       
       if (t.type === 'start'){
-        if (t.event.pageX >= width/2){
-          Matter.Body.setVelocity(entities.Plane.body, 
+        if (t.event.pageX >= Constants.WIDTH/2){
+          Matter.Body.setVelocity(entities.Snake.body, 
             {
             x: 3,
             y: 0,
           });
         }else{
-          Matter.Body.setVelocity(entities.Plane.body, 
+          Matter.Body.setVelocity(entities.Snake.body, 
             {
             x: -3,
             y: 0,
@@ -23,7 +24,7 @@ const UpdatePlane = (entities, {touches, time}) => {
         }
         
       }else{
-        Matter.Body.setVelocity(entities.Plane.body, {
+        Matter.Body.setVelocity(entities.Snake.body, {
           x: 0,
           y: 0,
         });
@@ -35,7 +36,7 @@ const UpdatePlane = (entities, {touches, time}) => {
   return entities;
 };
 
-export default UpdatePlane;
+export default UpdateSnake;
 
 
 // Matter.Body.applyForce(entities.Plane.body,

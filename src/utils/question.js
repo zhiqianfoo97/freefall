@@ -1,0 +1,63 @@
+const Question = [
+    [{'question' : 'Which of the following materials will be attracted to a magnet?','answer' :{ '0':'Iron' , '1':'Cotton' , '2':'Plastic', '3':'A shark', '4' : '0'}}],
+  
+    [{'question' : 'Gravity is the force which pulls things down to Earth. What is true about the force of gravity on the moon compared to Earth?' , 'answer' :{ '0':'It is stronger' , '1':'It is weaker', '2':'It is the same' , '3':'There is no gravity on the Moon at all.' , '4' : '1'}}],
+  
+    [{'question' : 'Breaking the barrier of the speed of ____ causes the phenomenon known as the sonic boom.' , 'answer' :{ '0':'Light' , '1':'Sound' , '2':'Jupiter' , '3':'A cheetah' ,'4' : '1'}}],
+  
+    [{'question' : 'Which body in our Solar System was once classified as a planet, but isn\'t any more?','answer' :{ '0':'Pacman' , '1':'Saturn' , '2':'Pluto' , '3':'Uranus', '4' : '2'}}],
+  
+    [{'question' : 'Take this scenario: (The two people will be the same distance from the middle) A small boy is sitting on one end of a seesaw (teeter-totter). If a really fat man jumps on the other side, what would happen to the child?','answer' :{ '0':'He would move upwards' , '1':'He would move downwards' , '2':'He would stay in the same place' , '3':'He would be propelled into space' ,'4': '0' }}],
+  
+    [{'question' : 'When you go ice-skating, you find that your most-embarrassing-aunt-of-all-time keeps falling over! What quantity has been reduced to cause her to fall?','answer' :{ '0':'Gravity' , '1':'Your aunts pride' , '2': 'Magnetism' , '3':'Friction' , '4':'0'}}],
+  
+    [{'question' : 'What was the name of the man who shouted "Eureka" when he got into the bath?','answer' :{ '0':'Leonarda Da Vinci' , '1':'Archimedes' , '2':'Isaac Newton' , '3':'Harry Potter', '4' : '1'}}],
+  
+    [{'question' : 'Which of the following substances acts as an insulator to (stops) the path of electricity?','answer' :{  '0':'Metal' , '1':'Grandma Josephine' , '2':'Impure Water' , '3':'Rubber' , '4': '3'}}],
+  
+    [{'question' : 'Now, light is very interesting. White light can be split into seven different colours, pretty much like a rainbow. Which of the following isnt one of those colours?','answer' :{ '0':'Yellow' , '1':'Red' , '2':'Brown' , '3':'Orange' , '4':'2'}}],
+  
+    [{'question' : 'Feeling confident kids? Then, which of the following is a term for a type of energy?','answer' :{ '0':'Your physics teacher' , '1':'Water' , '2':'Kinetic' , '3':'Animal' ,'4' : '2'}}],
+  
+    [{'question' : 'When light bends as it enters a different medium the process is known as what?','answer' :{ '0':'Diffraction' , '1':'Reflection' , '2':'Refraction', '3':'Diffusion' , '4' : '2'}}],
+  
+    [{'question' : 'A magnifying glass is what type of lens?','answer' :{ '0':'Concave' , '1':'Convex' , '2':'Sapphire' , '3':'Spectacles' ,'4' : '1'}}],
+  
+    [{'question' : 'Electric resistance is typically measured in what units?','answer' :{ '0':'Kilometres', '1':'Seconds' , '2':'Watts', '3':'Ohms' , '4' : '3'}}],
+  
+    [{'question' : 'A person who studies physics is known as a?','answer' :{ '0':'Astrologist' , '1':'Scientist', '2':'Physicist', '3':'Mathematician', '4' : '2'}}],
+  
+    [{'question' : 'Metals expand when heated and do what when cooled?','answer' :{ '0':'Disappear' , '1':'Expand', '2':'Multiply' , '3':'Contract', '4' : '3'}}],
+  
+    [{'question' : 'What is the first name of the famous scientist who gave us Newton’s three laws of motion?','answer' :{ '0':'Edward' , '1':'Christopher' , '2':'James', '3':'Isaac', '4': '3'}}],
+  
+    [{'question' : 'Electric power is typically measured in what units?','answer' :{ '0':'Joules' , '1':'Watts' , '2':'Ohms' , '3':'Amperes' , '4': '1'}}],
+  
+    [{'question' : 'The most recognized model of how the universe begun is known as the?','answer' :{ '0':'Explosion' , '1':'Big Bang' , '2':'Beginning' , '3':'Nebula' , '4' : '1' }}],
+  
+    [{'question' : 'Who is the Hubble Space Telescope named after?','answer' :{ '0':'Albert Hubble' , '1':'Edwin Hubble' , '2':'Aldo Hubble' , '3':'Constance Hubble' , '4' : '2'}}],
+  
+    [{'question' : 'The wire inside an electric bulb is known as the what?','answer' :{ '0':'Filament' , '1':'Tungsten' , '2':'Copper' , '3':'Stainless Steel' ,'4': '0'}}],
+  
+    [{'question' : 'Theoretical physicist James Maxwell was born in what country?','answer' :{ '0':'England' , '1':'United States' , '2':'Scotland' , '3':'China' , '4' : '2'}}],
+  
+    [{'question' : 'What kind of eclipse do we have when the moon is between the sun and the earth?','answer' :{ '0':'Solar' , '1':'Lunar' , '2':'Martian', '3':'Terrain', '4' : '0'}}],
+  
+    [{'question' : 'What is the earth’s primary source of energy?','answer': {'0':'Wind currents' , '1':'The moon', '2':'The Sun', '3':'Earths lava' , '4' : '2'}}],
+  
+    [{'question' : 'Electric current is typically measured in what units?','answer' :{ '0':'Amperes' , '1':'Watts', '2':'Volts' , '3':'Kilometres' ,'4' : '0'}}],
+  
+    [{'question' : 'What scientist is well known for his theory of relativity?','answer' :{ '0':'Stephen Hawking' , '1':'Albert Einstein' , '2':'James Watt', '3':'Stevie Wonder' , '4' : '1'}}],
+  
+    [{'question' : 'Earth is located in which galaxy?','answer' :{ '0':'Nova' , '1':'Milky Way' , '2':'Andromeda' , '3':'Virgo A' , '4' : '1'}}],
+  
+    [{'question' : 'Which of the following is not a state of matter?','answer' :{ '0':'Solid' , '1':'Liquid' , '2':'Plasma', '3':'Gas' , '4' : '2'}}],
+  
+    [{'question' : 'What is the ability to do work called ?','answer' :{ '0':'Energy' , '1':'Force' , '2':'Electricity' , '3':'Force' , '4' : '0'}}],
+  
+    [{'question' : 'What pulls us to the Earth?','answer' :{ '0':'Gravity' , '1':'Love' , '2':'Inertia', '3':'Magnet' , '4' : '0'}}],
+  
+    [{'question' : 'What happens when an object blocks the suns rays?', 'answer' :{ '0':'Darkness', '1':'Sun disppears' , '2':'Object ignites' , '3':'Shadow formed', '4' : '3'}}]
+  ]
+
+export default Question;

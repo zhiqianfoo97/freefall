@@ -30,7 +30,7 @@ export default (world, color, pos, size) => {
     pos.y,
     size.width,
     size.height,
-    {isStatic: true, friction: 1},
+    {isStatic: true, friction: 1, label:'wall' },
   );
   Matter.World.add(world, [initialCeiling]);
 

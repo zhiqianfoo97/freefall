@@ -3,9 +3,9 @@ import {Image} from 'react-native';
 import {array, object, string} from 'prop-types';
 import Matter from 'matter-js';
 
-const airplane = require('../../Image/snake.png');
+const snake = require('../../Image/snake.png');
 
-const Plane = props => {
+const Snake = props => {
   const width = props.size[0];
   const height = props.size[1];
   const x = props.body.position.x - width / 2;
@@ -18,9 +18,10 @@ const Plane = props => {
         top: y,
         width: width,
         height: height,
+        //backgroundColor: "green",
       }}
       resizeMode="stretch"
-      source={airplane}
+      source={snake}
     />
   );
 };
@@ -31,7 +32,7 @@ export default (world, color, pos, size) => {
     pos.y,
     size.width,
     size.height,
-    {friction: 0, frictionAir : 0, inertia: Infinity, inverseInertia:0},
+    {friction: 0, frictionAir : 0, inertia: Infinity, inverseInertia:0, label:'snake'},
   );
   Matter.World.add(world, [initialPlane]);
 
@@ -39,11 +40,11 @@ export default (world, color, pos, size) => {
     body: initialPlane,
     size: [size.width, size.height],
     color: color,
-    renderer: <Plane />,
+    renderer: <Snake />,
   };
 };
 
-Plane.propTypes = {
+Snake.propTypes = {
   size: array,
   body: object,
   color: string,
