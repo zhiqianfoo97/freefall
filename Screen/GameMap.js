@@ -1,17 +1,17 @@
 import React, {PureComponent} from 'react';
 import {StatusBar, StyleSheet, View, Text, Alert, Button, ImageBackground} from 'react-native';
-import Entities from './src/entities';
+import Entities from '../src/entities';
 import {GameEngine} from 'react-native-game-engine';
-import Systems from './src/systems';
-import Constants from './src/utils/constants';
-import Question from './src/utils/question';
-import Quiz from './src/components/Quiz';
-import Trivia from './src/components/Trivia';
-import TriviaList from './src/utils/trivia';
+import Systems from '../src/systems';
+import Constants from '../src/utils/constants';
+import Question from '../src/utils/question';
+import Quiz from '../src/components/Quiz';
+import Trivia from '../src/components/Trivia';
+import TriviaList from '../src/utils/trivia';
 
 
 
-export default class App extends PureComponent {
+export default class GameMap extends PureComponent {
   constructor(props) {
     super(props);
     this.state = {
@@ -27,8 +27,7 @@ export default class App extends PureComponent {
       questionLength: Question.length -1,
     };
     this.gameEngine = null;
-    //console.disableYellowBox = true;
-    //console.log(this.state.questionList[0]);
+
   }
 
   updateScore = (addScore) =>{
@@ -47,7 +46,6 @@ export default class App extends PureComponent {
     if (this.state.questionCounter >= this.state.questionLength){
       this.setState({running: false, gameOv: true});
     }
-    console.log(this.state.questionLength);
   }
   
   
@@ -62,7 +60,7 @@ export default class App extends PureComponent {
   }
 
   onEvent = e => {
-   // console.log("Event type:", e.type);
+
 
     if (e.type === 'gameOver') {
       this.setState({
@@ -125,7 +123,6 @@ export default class App extends PureComponent {
     );
   }
 }
-//        {this.state.showQuestion && <Quiz style={styles.quiz} updateScore={this.updateScore} questionL={this.state.questionList[this.state.questionCounter]}></Quiz>}
 
 const styles = StyleSheet.create({
   container: {
