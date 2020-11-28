@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "70643248650",
+    "firebase_url": "https://freefall-fc732.firebaseio.com",
+    "project_id": "freefall-fc732",
+    "storage_bucket": "freefall-fc732.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:70643248650:android:584a60f0d37fa4627d79f3",
+        "android_client_info": {
+          "package_name": "com.freefall"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "70643248650-cdhg65732erh4l1l94isi8ien8k087m5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBSo9af_l8ze9HZiU37hcZrPV7WdKkOwzU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "70643248650-cdhg65732erh4l1l94isi8ien8k087m5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -10,10 +10,10 @@ import {
 } from 'react-native';
 
 
-const TutorialPage5 = () => {
+const TutorialPage5 = props => {
   return (
       <View style={styles.container}> 
-        <ImageBackground source = {require('./Image/background.png')} style={styles.background} >
+        <ImageBackground source = {require('../Image/space-background.jpeg')} style={styles.background} >
           <View style = {styles.wrapper}>
             <View style = {styles.headerWrapper}>
                 <Text style={styles.planetName}>Terra</Text>
@@ -25,13 +25,17 @@ const TutorialPage5 = () => {
                 <Text style = {styles.question}>Q: 0/100</Text>
               </View>
               <View style={styles.imageWrapper}>
-                <Image style={styles.image1} source = {require('./Image/snake.png')}/>
-                <Image style={styles.image2} source = {require('./Image/apple.png')}/>
+                <Image style={styles.image1} source = {require('../Image/snake.png')}/>
+                <Image style={styles.image2} source = {require('../Image/apple.png')}/>
               </View>
 
               <View style = {styles.tutorialWrapper}>
                 <Text style={styles.tutorialHeader}>Eat apples for Quizzes!</Text>
                 <Text style={styles.tutorialContent}>Test your understanding of each terrain. Complete 100 Quizzes on a terrain to demonstrate your knowledge! Every quiz answered correctly will decrease the speed of free falling!</Text>
+                <View style = {styles.buttonWrapper}>
+                    <Button style={styles.button1} onPress={() => props.navigation.navigate('TutorialPage4')} title="Previous"/>
+                    <Button style={styles.button2} onPress={() => props.navigation.navigate('TutorialPage6')} title="Next"/>
+                  </View>
               </View>
             </View>
         </ImageBackground>          
@@ -133,7 +137,12 @@ const styles = StyleSheet.create({
     position: "absolute",
     bottom: 20,
     paddingLeft: 40,
-  }
+  },
+  buttonWrapper:{
+    marginTop: 20,
+    flexDirection: "row",
+    justifyContent:"space-between"
+  },
 });
 
 export default TutorialPage5;
