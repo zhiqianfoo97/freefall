@@ -12,13 +12,13 @@ const UpdateSnake = (entities, {touches, time}) => {
         if (t.event.pageX >= Constants.WIDTH/2){
           Matter.Body.setVelocity(entities.Snake.body, 
             {
-            x: 3,
+            x: Constants.SNAKE_VELOCITY,
             y: 0,
           });
         }else{
           Matter.Body.setVelocity(entities.Snake.body, 
             {
-            x: -3,
+            x: -Constants.SNAKE_VELOCITY,
             y: 0,
           });
         }
@@ -38,7 +38,3 @@ const UpdateSnake = (entities, {touches, time}) => {
 
 export default UpdateSnake;
 
-
-// Matter.Body.applyForce(entities.Plane.body,
-//   entities.Plane.body.position,
-//   {x: 1, y:0});

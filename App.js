@@ -11,7 +11,6 @@ import TutorialPage4 from './Screen/TutorialPage4';
 import TutorialPage5 from './Screen/TutorialPage5';
 import TutorialPage6 from './Screen/TutorialPage6';
 
-
 const App = createStackNavigator({
   LandingPage: {
     screen: LandingPage
