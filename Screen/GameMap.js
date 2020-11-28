@@ -11,7 +11,8 @@ import TriviaList from '../src/utils/trivia';
 
 
 
-export default class GameMap extends PureComponent {
+
+export default class App extends PureComponent {
   constructor(props) {
     super(props);
     this.state = {
@@ -27,7 +28,8 @@ export default class GameMap extends PureComponent {
       questionLength: Question.length -1,
     };
     this.gameEngine = null;
-
+    //console.disableYellowBox = true;
+    //console.log(this.state.questionList[0]);
   }
 
   updateScore = (addScore) =>{
@@ -46,6 +48,7 @@ export default class GameMap extends PureComponent {
     if (this.state.questionCounter >= this.state.questionLength){
       this.setState({running: false, gameOv: true});
     }
+    console.log(this.state.questionLength);
   }
   
   
@@ -60,7 +63,7 @@ export default class GameMap extends PureComponent {
   }
 
   onEvent = e => {
-
+   // console.log("Event type:", e.type);
 
     if (e.type === 'gameOver') {
       this.setState({
@@ -101,7 +104,15 @@ export default class GameMap extends PureComponent {
         </GameEngine>
         {!this.state.gameOv ? (
           <View style={styles.scoreView}>
-            <Text style={{color:'white'}}>Score: {this.state.score}</Text>   
+            <View style={{justifyContent:'space-between', flexDirection:'row', width:'100%'}}>
+              <Text style={{fontSize:15, color:'white'}}>Terra</Text>
+              <Text style={{color:'white'}}>v = 140m/s</Text>
+              <Text style={{color:'white'}}>g = 9.81m/s^2</Text>
+            </View>
+            <View style={{justifyContent:'space-between', flexDirection:'row', width:'100%'}}>
+              <Text style={{color:'pink'}}>Score: {this.state.score}</Text>
+              <Text style={{color:'teal'}}>Q: {this.state.questionCounter}/30</Text>   
+              </View>
           </View>
            
         ) : (
@@ -123,6 +134,7 @@ export default class GameMap extends PureComponent {
     );
   }
 }
+//        {this.state.showQuestion && <Quiz style={styles.quiz} updateScore={this.updateScore} questionL={this.state.questionList[this.state.questionCounter]}></Quiz>}
 
 const styles = StyleSheet.create({
   container: {
@@ -186,7 +198,9 @@ const styles = StyleSheet.create({
   scoreView:{
     position:'absolute',
     top: '0%',
-    left: '0%'
+    left: '0%',
+    flexDirection: 'column',
+    width:'100%'
   }
 
 

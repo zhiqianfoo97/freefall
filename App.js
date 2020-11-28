@@ -103,7 +103,15 @@ export default class App extends PureComponent {
         </GameEngine>
         {!this.state.gameOv ? (
           <View style={styles.scoreView}>
-            <Text style={{color:'white'}}>Score: {this.state.score}</Text>   
+            <View style={{justifyContent:'space-between', flexDirection:'row', width:'100%'}}>
+              <Text style={{fontSize:15, color:'white'}}>Terra</Text>
+              <Text style={{color:'white'}}>v = 140m/s</Text>
+              <Text style={{color:'white'}}>g = 9.81m/s^2</Text>
+            </View>
+            <View style={{justifyContent:'space-between', flexDirection:'row', width:'100%'}}>
+              <Text style={{color:'pink'}}>Score: {this.state.score}</Text>
+              <Text style={{color:'teal'}}>Q: {this.state.questionCounter}/30</Text>   
+              </View>
           </View>
            
         ) : (
@@ -189,7 +197,9 @@ const styles = StyleSheet.create({
   scoreView:{
     position:'absolute',
     top: '0%',
-    left: '0%'
+    left: '0%',
+    flexDirection: 'column',
+    width:'100%'
   }
 
 
