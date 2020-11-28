@@ -104,15 +104,15 @@ export default class App extends PureComponent {
         </GameEngine>
         {!this.state.gameOv ? (
           <View style={styles.scoreView}>
-            <View style={{justifyContent:'space-between', flexDirection:'row', width:'100%'}}>
-              <Text style={{fontSize:15, color:'white'}}>Terra</Text>
-              <Text style={{color:'white'}}>v = 140m/s</Text>
-              <Text style={{color:'white'}}>g = 9.81m/s^2</Text>
-            </View>
-            <View style={{justifyContent:'space-between', flexDirection:'row', width:'100%'}}>
-              <Text style={{color:'pink'}}>Score: {this.state.score}</Text>
-              <Text style={{color:'teal'}}>Q: {this.state.questionCounter}/30</Text>   
-              </View>
+             <View style = {styles.headerWrapper}>
+                  <Text style={styles.planetName}>Terra</Text>
+                  <Text style={styles.velocity}>v = 140m/s</Text>
+                  <Text style={styles.gravity}>g = 9.81m/s^2</Text>
+                </View>
+                <View style = {styles.headerWrapper1}>
+                  <Text style = {styles.score}>Score: {this.state.score}</Text>
+                  <Text style = {styles.question}>Q: {this.state.questionCounter}/30</Text>
+                </View>
           </View>
            
         ) : (
@@ -142,6 +142,48 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#000',
   },
+  headerWrapper:{
+    flexDirection: "row",
+    justifyContent: "space-between",
+  },
+  headerWrapper1:{
+    flexDirection: "row",
+    justifyContent: "space-between",
+  },
+  planetName:{
+    color: "white",
+    fontFamily: "Fredoka One",
+    fontWeight: "400",
+    fontSize: 40,
+  },
+  velocity:{
+    color: "white",
+    fontFamily: "Roboto",
+    fontWeight: "400",
+    fontSize: 20,
+    marginTop: 15,
+  },
+  gravity:{
+    color: "white",
+    fontFamily: "Roboto",
+    fontWeight: "400",
+    fontSize: 20,
+    marginTop: 15,
+  },
+  score: {
+    color: "white",
+    fontFamily: "Roboto",
+    fontWeight: "400",
+    fontSize: 25,
+    color: 'rgba(255,100,124,1)',
+  },
+  question:{
+    color: "white",
+    fontFamily: "Roboto",
+    fontWeight: "400",
+    fontSize: 25,
+    color: 'rgba(144,218,251,1)',
+  },
   gameContainer: {
     position: 'absolute',
     top: 0,
@@ -151,8 +193,8 @@ const styles = StyleSheet.create({
   },
   centerButton:{
     position: 'absolute',
-    top: '50%',
-    left: '25%',
+    top: '40%',
+    left: '30%',
     backgroundColor: 'gray',
     width: 150,
     height: 150,

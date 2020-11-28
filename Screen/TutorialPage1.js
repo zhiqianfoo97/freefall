@@ -21,8 +21,8 @@ const TutorialPage1 = props => {
                   <Text style={styles.gravity}>g = 9.81m/s^2</Text>
                 </View>
                 <View style = {styles.headerWrapper1}>
-                  <Text style = {styles.score}>Score: 1400</Text>
-                  <Text style = {styles.question}>Q: 0/100</Text>
+                  <Text style = {styles.score}>Score: 1500</Text>
+                  <Text style = {styles.question}>Q: 0/30</Text>
                 </View>
                 <View style = {styles.tutorialWrapper}>
                   <Text style={styles.tutorialHeader}>This Is Your Score Dashboard </Text>

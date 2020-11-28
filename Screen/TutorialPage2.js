@@ -20,15 +20,15 @@ const TutorialPage2 = props => {
                 <Text style={styles.gravity}>g = 9.81m/s^2</Text>
               </View>
               <View style = {styles.headerWrapper1}>
-                <Text style = {styles.score}>Score: 1400</Text>
-                <Text style = {styles.question}>Q: 0/100</Text>
+                <Text style = {styles.score}>Score: 1500</Text>
+                <Text style = {styles.question}>Q: 0/30</Text>
               </View>
               <View style={styles.imageWrapper}>
                 <Image style={styles.image1} source = {require('../Image/snake.png')}/>
               </View>
               <View style = {styles.tutorialWrapper}>
                 <Text style={styles.tutorialHeader}>This Is Your Character </Text>
-                <Text style={styles.tutorialContent}>Use the Left and Right navigation arrows to move your snake. Your snake’s length decreases every 2 seconds due to fire! The degree of reduction depends on current free falling speed!</Text>
+                <Text style={styles.tutorialContent}>Use the Left and Right navigation arrows to move your snake.</Text>
                 <View style = {styles.buttonWrapper}>
                     <Button style={styles.button1} onPress={() => props.navigation.navigate('TutorialPage1')} title="Previous"/>
                     <Button style={styles.button2} onPress={() => props.navigation.navigate('TutorialPage3')} title="Next"/>

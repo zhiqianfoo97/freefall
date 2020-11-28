@@ -21,8 +21,8 @@ const TutorialPage4 = props => {
                 <Text style={styles.gravity}>g = 9.81m/s^2</Text>
               </View>
               <View style = {styles.headerWrapper1}>
-                <Text style = {styles.score}>Score: 1400</Text>
-                <Text style = {styles.question}>Q: 0/100</Text>
+                <Text style = {styles.score}>Score: 1500</Text>
+                <Text style = {styles.question}>Q: 0/30</Text>
               </View>
               <View style={styles.imageWrapper}>
                 <Image style={styles.image1} source = {require('../Image/snake.png')}/>
@@ -31,7 +31,7 @@ const TutorialPage4 = props => {
 
               <View style = {styles.tutorialWrapper}>
                 <Text style={styles.tutorialHeader}>Avoid rocks! They’re not food.</Text>
-                <Text style={styles.tutorialContent}>Eating a rock will disable your actions for 4 seconds. Leaving you to burn freely!</Text>
+                <Text style={styles.tutorialContent}>Bumping into a rock will kill the snake instantly, and it's a game over!</Text>
                 <View style = {styles.buttonWrapper}>
                     <Button style={styles.button1} onPress={() => props.navigation.navigate('TutorialPage3')} title="Previous"/>
                     <Button style={styles.button2} onPress={() => props.navigation.navigate('TutorialPage5')} title="Next"/>

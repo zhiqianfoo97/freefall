@@ -21,8 +21,8 @@ const TutorialPage5 = props => {
                 <Text style={styles.gravity}>g = 9.81m/s^2</Text>
               </View>
               <View style = {styles.headerWrapper1}>
-                <Text style = {styles.score}>Score: 1400</Text>
-                <Text style = {styles.question}>Q: 0/100</Text>
+                <Text style = {styles.score}>Score: 1500</Text>
+                <Text style = {styles.question}>Q: 0/30</Text>
               </View>
               <View style={styles.imageWrapper}>
                 <Image style={styles.image1} source = {require('../Image/snake.png')}/>
@@ -31,7 +31,7 @@ const TutorialPage5 = props => {
 
               <View style = {styles.tutorialWrapper}>
                 <Text style={styles.tutorialHeader}>Eat apples for Quizzes!</Text>
-                <Text style={styles.tutorialContent}>Test your understanding of each terrain. Complete 100 Quizzes on a terrain to demonstrate your knowledge! Every quiz answered correctly will decrease the speed of free falling!</Text>
+                <Text style={styles.tutorialContent}>Test your understanding of each terrain. Complete 5 Quizzes on a terrain to demonstrate your knowledge! Every quiz answered correctly will increase your score!</Text>
                 <View style = {styles.buttonWrapper}>
                     <Button style={styles.button1} onPress={() => props.navigation.navigate('TutorialPage4')} title="Previous"/>
                     <Button style={styles.button2} onPress={() => props.navigation.navigate('TutorialPage6')} title="Next"/>
