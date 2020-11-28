@@ -15,7 +15,7 @@ const ChooseMap = () => {
  
     return (
         <View style={{display:"flex", flexDirection:"column"}}>
-          <ImageBackground source={require("./Image/space-background.jpeg")} style={{height:"100%", width:"100%"}}>
+          <ImageBackground source={require("../Image/space-background.jpeg")} style={{height:"100%", width:"100%"}}>
             <View style={{height:"20%", width:"100%"}}></View>
 
             <View style={{justifyContent:"center", width:"100%", paddingBottom:10}}>
@@ -25,7 +25,7 @@ const ChooseMap = () => {
             <View style={styles.container1}>
               <View style={{width:"50%", justifyContent:"center"}}  >
                 <TouchableOpacity>
-                  <Image style={styles.imageStyle} source={require("./Image/earth.png")}>
+                  <Image style={styles.imageStyle} source={require("../Image/earth.png")}>
                   </Image>
                   <Text style={styles.whiteFont2}>Terra</Text>
                 </TouchableOpacity>
@@ -37,7 +37,7 @@ const ChooseMap = () => {
 
               <View style={styles.container3}>
                 <TouchableOpacity onPress={useState("Moon")}>
-                  <Image style={styles.image2Style} source={require("./Image/moon.png")}>
+                  <Image style={styles.image2Style} source={require("../Image/moon.png")}>
                   </Image>
                   <Text style={styles.whiteFont2}>Moon</Text>
                 </TouchableOpacity>
@@ -45,7 +45,7 @@ const ChooseMap = () => {
 
               <View style={styles.container3}>
                 <TouchableOpacity onPress={useState("Mars")}>
-                  <Image style={styles.image2Style} source={require("./Image/mars.png")}>
+                  <Image style={styles.image2Style} source={require("../Image/mars.png")}>
                   </Image>
                   <Text style={styles.whiteFont2}>Mars</Text>
                 </TouchableOpacity>

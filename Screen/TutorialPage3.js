@@ -10,10 +10,10 @@ import {
 } from 'react-native';
 
 
-const TutorialPage3 = () => {
+const TutorialPage3 = props => {
   return (
       <View style={styles.container}> 
-        <ImageBackground source = {require('./Image/background.png')} style={styles.background} >
+        <ImageBackground source = {require('../Image/space-background.jpeg')} style={styles.background} >
           <View style = {styles.wrapper}>
             <View style = {styles.headerWrapper}>
                 <Text style={styles.planetName}>Terra</Text>
@@ -25,16 +25,20 @@ const TutorialPage3 = () => {
                 <Text style = {styles.question}>Q: 0/100</Text>
               </View>
               <View style={styles.imageWrapper}>
-                <Image style={styles.image1} source = {require('./Image/snake.png')}/>
+                <Image style={styles.image1} source = {require('../Image/snake.png')}/>
               </View>
               <View style = {styles.cloudImageWrapper}>
-                <Image style={styles.cloudImage} source = {require('./Image/cloud.png')}/>
-                <Image style={styles.cloudImage2} source = {require('./Image/cloud.png')}/>
-                <Image style={styles.cloudImage3} source = {require('./Image/cloud.png')}/>
+                <Image style={styles.cloudImage} source = {require('../Image/cloud.png')}/>
+                <Image style={styles.cloudImage2} source = {require('../Image/cloud.png')}/>
+                <Image style={styles.cloudImage3} source = {require('../Image/cloud.png')}/>
               </View>
               <View style = {styles.tutorialWrapper}>
                 <Text style={styles.tutorialHeader}>Eat some clouds for knowledge!</Text>
                 <Text style={styles.tutorialContent}>Receive a “Did You Know?” pop-up everytime your snake meets the cloud. Gather knowledge for the “Apple” quiz!</Text>
+                <View style = {styles.buttonWrapper}>
+                    <Button style={styles.button1} onPress={() => props.navigation.navigate('TutorialPage2')} title="Previous"/>
+                    <Button style={styles.button2} onPress={() => props.navigation.navigate('TutorialPage4')} title="Next"/>
+                  </View>
               </View>
             </View>
         </ImageBackground>          
@@ -149,7 +153,12 @@ const styles = StyleSheet.create({
     position: "absolute",
     bottom: 20,
     paddingLeft: 40,
-  }
+  },
+  buttonWrapper:{
+    marginTop: 20,
+    flexDirection: "row",
+    justifyContent:"space-between"
+  },
 });
 
 export default TutorialPage3;

@@ -7,14 +7,15 @@ import {
   View,
   Text,
   Button,
-  Dimensions
+  Dimensions,
+  TouchableOpacity
 } from 'react-native';
 
 const win = Dimensions.get('window');
-const TutorialPage6 = () => {
+const TutorialPage6 = props => {
   return (
       <View style={styles.container}> 
-        <ImageBackground source = {require('./Image/background.png')} style={styles.background} >
+        <ImageBackground source = {require('../Image/space-background.jpeg')} style={styles.background} >
           <View style = {styles.wrapper}>
             <View style = {styles.headerWrapper}>
                 <Text style={styles.planetName}>Terra</Text>
@@ -26,20 +27,22 @@ const TutorialPage6 = () => {
                 <Text style = {styles.question}>Q: 0/100</Text>
               </View>
               <View style={styles.imageWrapper}>
-                <Image style={styles.image1} source = {require('./Image/snake.png')}/>
-                <Image style={styles.image2} source = {require('./Image/rock-raw.png')}/>
+                <Image style={styles.image1} source = {require('../Image/snake.png')}/>
+                <Image style={styles.image2} source = {require('../Image/rock-raw.png')}/>
               </View>
               <View style = {styles.cloudImageWrapper}>
-                <Image style={styles.cloudImage} source = {require('./Image/cloud.png')}/>
-                <Image style={styles.cloudImage2} source = {require('./Image/cloud.png')}/>
-                <Image style={styles.cloudImage3} source = {require('./Image/cloud.png')}/>
-                <Image style={styles.image3} source = {require('./Image/apple.png')}/>
+                <Image style={styles.cloudImage} source = {require('../Image/cloud.png')}/>
+                <Image style={styles.cloudImage2} source = {require('../Image/cloud.png')}/>
+                <Image style={styles.cloudImage3} source = {require('../Image/cloud.png')}/>
+                <Image style={styles.image3} source = {require('../Image/apple.png')}/>
               </View>
             
               
               <View style = {styles.tutorialWrapper}>
                 <Text style={styles.tutorialHeader}>Let’s START!</Text>
-                <Button style={styles.button} title="Start"/>
+                <TouchableOpacity onPress={() => props.navigation.navigate('GameMap')} style={styles.button}>
+                    <Text style={styles.buttonText}>START</Text>
+                </TouchableOpacity>
               </View>
             </View>
         </ImageBackground>          
@@ -167,9 +170,14 @@ const styles = StyleSheet.create({
     paddingLeft: 40,
     height: 150,
   },
-  button:{
-    borderRadius: 200,
-    padding: 20,
+  button: {
+    backgroundColor: "#7A56B1",
+    padding: 10,
+    borderRadius: 10
+  },
+  buttonText: {
+      color: "white",
+      textAlign: "center"
   }
 });
 

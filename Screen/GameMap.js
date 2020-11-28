@@ -86,7 +86,7 @@ export default class GameMap extends PureComponent {
   render() {
     return (
       <View style={styles.container}>
-        <ImageBackground source={require("./Image/space-background.png")} style={styles.backgroundImageAnim}>
+        <ImageBackground source={require("../Image/space-background.png")} style={styles.backgroundImageAnim}>
         <GameEngine
           ref={ref => {
             this.gameEngine = ref;
@@ -110,8 +110,9 @@ export default class GameMap extends PureComponent {
             <Text style={{color:'white', textAlign:'center'}}>Game over!</Text>
             <Text style={{color:'white', textAlign:'center'}}>Score: {this.state.score}</Text>
             <View style={styles.inView}>
-              <Button title='OK' onPress={()=> this.setState({running: true, gameOv: false})}></Button>
               <Button title="Restart" onPress={this.restart}></Button>
+              <Button title='Home' onPress={()=> this.props.navigation.navigate('LandingPage')}></Button>
+              
             </View>
           </View>
         )}

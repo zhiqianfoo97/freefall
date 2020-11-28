@@ -1,4 +1,3 @@
-
 import React from 'react';
 import {
   ImageBackground,
@@ -10,10 +9,10 @@ import {
 } from 'react-native';
 
 
-const TutorialPage2 = () => {
+const TutorialPage2 = props => {
   return (
       <View style={styles.container}> 
-        <ImageBackground source = {require('./Image/background.png')} style={styles.background} >
+        <ImageBackground source = {require('../Image/space-background.jpeg')} style={styles.background} >
           <View style = {styles.wrapper}>
             <View style = {styles.headerWrapper}>
                 <Text style={styles.planetName}>Terra</Text>
@@ -25,11 +24,15 @@ const TutorialPage2 = () => {
                 <Text style = {styles.question}>Q: 0/100</Text>
               </View>
               <View style={styles.imageWrapper}>
-                <Image style={styles.image1} source = {require('./Image/snake.png')}/>
+                <Image style={styles.image1} source = {require('../Image/snake.png')}/>
               </View>
               <View style = {styles.tutorialWrapper}>
                 <Text style={styles.tutorialHeader}>This Is Your Character </Text>
                 <Text style={styles.tutorialContent}>Use the Left and Right navigation arrows to move your snake. Your snake’s length decreases every 2 seconds due to fire! The degree of reduction depends on current free falling speed!</Text>
+                <View style = {styles.buttonWrapper}>
+                    <Button style={styles.button1} onPress={() => props.navigation.navigate('TutorialPage1')} title="Previous"/>
+                    <Button style={styles.button2} onPress={() => props.navigation.navigate('TutorialPage3')} title="Next"/>
+                  </View>
               </View>
             </View>
         </ImageBackground>          
@@ -125,7 +128,13 @@ const styles = StyleSheet.create({
     position: "absolute",
     bottom: 20,
     paddingLeft: 40,
-  }
+  },
+  buttonWrapper:{
+    marginTop: 20,
+    flexDirection: "row",
+    justifyContent:"space-between"
+  },
 });
 
 export default TutorialPage2;
+
