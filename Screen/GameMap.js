@@ -57,7 +57,7 @@ export default class App extends PureComponent {
     this.setState({showTrivia : false, running: true});
 
     this.setState(prevState => {
-      return {triviaCounter: (prevState.triviaCounter < 2) ? prevState.triviaCounter + 1 : 0}
+      return {triviaCounter: (prevState.triviaCounter < 30) ? prevState.triviaCounter + 1 : 0}
     })
 
   }
