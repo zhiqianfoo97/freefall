@@ -17,7 +17,7 @@ const LandingPage = props => {
               <Text style= {styles.name}>FreeFall</Text>
             </View>
             <View style={styles.buttonContainer}>
-                <TouchableOpacity onPress={() => props.navigation.navigate('GameMap')} style={styles.button}>
+                <TouchableOpacity onPress={() => props.navigation.navigate('ChooseMap')} style={styles.button}>
                     <Text style={styles.buttonText}>START</Text>
                 </TouchableOpacity>
                 <View style ={styles.space}/>

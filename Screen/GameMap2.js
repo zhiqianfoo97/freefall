@@ -2,7 +2,7 @@ import React, {PureComponent} from 'react';
 import {StatusBar, StyleSheet, View, Text, Alert, Button, ImageBackground} from 'react-native';
 import Entities from '../src/entities';
 import {GameEngine} from 'react-native-game-engine';
-import Systems from '../src/systems';
+import Systems from '../src/system2';
 import Constants from '../src/utils/constants';
 import Question from '../src/utils/question';
 import Quiz from '../src/components/Quiz';
@@ -89,7 +89,7 @@ export default class App extends PureComponent {
   render() {
     return (
       <View style={styles.container}>
-        <ImageBackground source={require("../Image/space-background.png")} style={styles.backgroundImageAnim}>
+        <ImageBackground source={require("../Image/lunar.jpg")} style={styles.backgroundImageAnim}>
         <GameEngine
           ref={ref => {
             this.gameEngine = ref;
@@ -105,9 +105,9 @@ export default class App extends PureComponent {
         {!this.state.gameOv ? (
           <View style={styles.scoreView}>
              <View style = {styles.headerWrapper}>
-                  <Text style={styles.planetName}>Terra</Text>
-                  <Text style={styles.velocity}>v = 54m/s</Text>
-                  <Text style={styles.gravity}>g = 9.81m/s^2</Text>
+                  <Text style={styles.planetName}>Moon</Text>
+                  <Text style={styles.velocity}>v = 22m/s</Text>
+                  <Text style={styles.gravity}>g = 1.62m/s^2</Text>
                 </View>
                 <View style = {styles.headerWrapper1}>
                   <Text style = {styles.score}>Score: {this.state.score}</Text>

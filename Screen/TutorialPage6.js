@@ -18,9 +18,9 @@ const TutorialPage6 = props => {
         <ImageBackground source = {require('../Image/space-background.jpeg')} style={styles.background} >
           <View style = {styles.wrapper}>
             <View style = {styles.headerWrapper}>
-                <Text style={styles.planetName}>Terra</Text>
-                <Text style={styles.velocity}>v = 140m/s</Text>
-                <Text style={styles.gravity}>g = 9.81m/s^2</Text>
+              <Text style={styles.planetName}>Space</Text>
+                <Text style={styles.velocity}>v = 2m/s</Text>
+                <Text style={styles.gravity}>g = 0.5m/s^2</Text>
               </View>
               <View style = {styles.headerWrapper1}>
                 <Text style = {styles.score}>Score: 1500</Text>

@@ -10,8 +10,8 @@ import {
 } from 'react-native';
 
 
-const ChooseMap = () => {
-  const [mapChosen, setMap] = useState("Terra");
+const ChooseMap = props => {
+  
  
     return (
         <View style={{display:"flex", flexDirection:"column"}}>
@@ -24,7 +24,7 @@ const ChooseMap = () => {
 
             <View style={styles.container1}>
               <View style={{width:"50%", justifyContent:"center"}}  >
-                <TouchableOpacity>
+                <TouchableOpacity onPress={() => props.navigation.navigate('GameMap')}> 
                   <Image style={styles.imageStyle} source={require("../Image/earth.png")}>
                   </Image>
                   <Text style={styles.whiteFont2}>Terra</Text>
@@ -36,7 +36,7 @@ const ChooseMap = () => {
             <View style={styles.container2}>
 
               <View style={styles.container3}>
-                <TouchableOpacity onPress={useState("Moon")}>
+                <TouchableOpacity onPress={() => props.navigation.navigate('GameMap2')}>
                   <Image style={styles.image2Style} source={require("../Image/moon.png")}>
                   </Image>
                   <Text style={styles.whiteFont2}>Moon</Text>
@@ -44,7 +44,7 @@ const ChooseMap = () => {
               </View>
 
               <View style={styles.container3}>
-                <TouchableOpacity onPress={useState("Mars")}>
+                <TouchableOpacity onPress={() => props.navigation.navigate('GameMap3')}>
                   <Image style={styles.image2Style} source={require("../Image/mars.png")}>
                   </Image>
                   <Text style={styles.whiteFont2}>Mars</Text>

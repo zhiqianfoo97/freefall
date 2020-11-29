@@ -1,8 +1,10 @@
-import { createStackNavigator} from 'react-navigation-stack';
+import {createStackNavigator} from 'react-navigation-stack';
 import {createAppContainer} from 'react-navigation';
 
 import ChooseMap from './Screen/ChooseMap';
 import GameMap from './Screen/GameMap';
+import GameMap2 from './Screen/GameMap2';
+import GameMap3 from './Screen/GameMap3';
 import LandingPage from './Screen/LandingPage';
 import TutorialPage1 from './Screen/TutorialPage1';
 import TutorialPage2 from './Screen/TutorialPage2';
@@ -17,6 +19,12 @@ const App = createStackNavigator({
   },
   GameMap: {
     screen: GameMap
+  },
+  GameMap2:{
+    screen: GameMap2
+  },
+  GameMap3:{
+    screen: GameMap3
   },
   ChooseMap: {
     screen: ChooseMap
@@ -51,4 +59,4 @@ const App = createStackNavigator({
 
 export default createAppContainer(App);
 
- 
+
