@@ -10,27 +10,30 @@ import {
 } from 'react-native';
 
 
-const TutorialPage1 = () => {
+const TutorialPage1 = props => {
   return (
-      <View style={styles.container}> 
-        <ImageBackground source = {require('./Image/background.png')} style={styles.background} >
-          <View style = {styles.wrapper}>
-            <View style = {styles.headerWrapper}>
-                <Text style={styles.planetName}>Terra</Text>
-                <Text style={styles.velocity}>v = 140m/s</Text>
-                <Text style={styles.gravity}>g = 9.81m/s^2</Text>
+        <View style={styles.container}> 
+          <ImageBackground source = {require('../Image/space-background.jpeg')} style={styles.background} >
+            <View style = {styles.wrapper}>
+              <View style = {styles.headerWrapper}>
+                  <Text style={styles.planetName}>Terra</Text>
+                  <Text style={styles.velocity}>v = 140m/s</Text>
+                  <Text style={styles.gravity}>g = 9.81m/s^2</Text>
+                </View>
+                <View style = {styles.headerWrapper1}>
+                  <Text style = {styles.score}>Score: 1400</Text>
+                  <Text style = {styles.question}>Q: 0/100</Text>
+                </View>
+                <View style = {styles.tutorialWrapper}>
+                  <Text style={styles.tutorialHeader}>This Is Your Score Dashboard </Text>
+                  <Text style={styles.tutorialContent}>It has the game mode, the gravitational constant of the terrain, the velocity of your snake and your score</Text>
+                  <View style = {styles.buttonWrapper}>
+                    <Button style={styles.button2} onPress={() => props.navigation.navigate('TutorialPage2')} title="Next"/>
+                  </View>
+                </View>
               </View>
-              <View style = {styles.headerWrapper1}>
-                <Text style = {styles.score}>Score: 1400</Text>
-                <Text style = {styles.question}>Q: 0/100</Text>
-              </View>
-              <View style = {styles.tutorialWrapper}>
-                <Text style={styles.tutorialHeader}>This Is Your Score Dashboard </Text>
-                <Text style={styles.tutorialContent}>It has the game mode, the gravitational constant of the terrain, the velocity of your snake and your score</Text>
-              </View>
-            </View>
-        </ImageBackground>          
-      </View>
+          </ImageBackground>          
+        </View>
   );
 };
 
@@ -110,7 +113,13 @@ const styles = StyleSheet.create({
     position: "absolute",
     bottom: 20,
     paddingLeft: 40,
-  }
+  },
+  buttonWrapper:{
+    marginTop: 20,
+    flexDirection: "row",
+    justifyContent:"flex-end"
+  },
+ 
 });
 
 export default TutorialPage1;

@@ -4,21 +4,28 @@ import {
   StyleSheet,
   View,
   Text,
-  Button
+  Button,
+  TouchableOpacity
 } from 'react-native';
 
 
-const LandingPage = () => {
+const LandingPage = props => {
   return (
       <View style={styles.container}> 
-        <ImageBackground source = {require('./Image/background.png')} style={styles.background} >
+        <ImageBackground source = {require('../Image/space-background.jpeg')} style={styles.background} >
             <View style={styles.nameContainer}>
               <Text style= {styles.name}>FreeFall</Text>
             </View>
             <View style={styles.buttonContainer}>
-              <Button style={styles.button} title="Start"/>
-              <Button style={styles.button} title="Tutorial"/>
+                <TouchableOpacity onPress={() => props.navigation.navigate('GameMap')} style={styles.button}>
+                    <Text style={styles.buttonText}>START</Text>
+                </TouchableOpacity>
+                <View style ={styles.space}/>
+                <TouchableOpacity onPress={() => props.navigation.navigate('TutorialPage1')} style={styles.button}>
+                    <Text style={styles.buttonText}>TUTORIAL</Text>
+                </TouchableOpacity>
             </View>
+          
 
         </ImageBackground>
           
@@ -48,16 +55,24 @@ const styles = StyleSheet.create({
     paddingLeft: 80,
     paddingRight: 80,
   },
-  button:{
-    borderRadius: 50,
-    marginBottom: 20,
-    color: "red",
-  },
   background:{
     flex: 1,
     width: '100%',
     height: '100%',
+  },
+  space:{
+    height: 20,
+  },
+  button: {
+    backgroundColor: "#7A56B1",
+    padding: 10,
+    borderRadius: 10
+  },
+  buttonText: {
+      color: "white",
+      textAlign: "center"
   }
+ 
 });
 
 export default LandingPage;
