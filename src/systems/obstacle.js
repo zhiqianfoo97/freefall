@@ -48,7 +48,7 @@ const UpdateObstacle = (entities, {time, dispatch}) => {
 
       }else{
         onScreenCounter += 1;
-        Matter.Body.translate(entities['Obstacle' + i].body, {x: 0, y: -10});
+        Matter.Body.translate(entities['Obstacle' + i].body, {x: 0, y: Constants.OBJECT_VELOCITY});
         exisitingEntities.push(i);
       }
 
