@@ -31,7 +31,7 @@ const TutorialPage5 = props => {
 
               <View style = {styles.tutorialWrapper}>
                 <Text style={styles.tutorialHeader}>Eat apples for Quizzes!</Text>
-                <Text style={styles.tutorialContent}>Test your understanding of each terrain. Complete 5 Quizzes on a terrain to demonstrate your knowledge! Every quiz answered correctly will increase your score!</Text>
+                <Text style={styles.tutorialContent}>Test your understanding of each terrain. Complete 30 Quizzes on a terrain to demonstrate your knowledge! Every quiz answered correctly will increase your score!</Text>
                 <View style = {styles.buttonWrapper}>
                     <Button style={styles.button1} onPress={() => props.navigation.navigate('TutorialPage4')} title="Previous"/>
                     <Button style={styles.button2} onPress={() => props.navigation.navigate('TutorialPage6')} title="Next"/>

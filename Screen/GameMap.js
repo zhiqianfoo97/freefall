@@ -89,7 +89,7 @@ export default class App extends PureComponent {
   render() {
     return (
       <View style={styles.container}>
-        <ImageBackground source={require("../Image/space-background.png")} style={styles.backgroundImageAnim}>
+        <ImageBackground source={require("../Image/terra.jpg")} style={styles.backgroundImageAnim}>
         <GameEngine
           ref={ref => {
             this.gameEngine = ref;
