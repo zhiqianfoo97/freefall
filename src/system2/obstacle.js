@@ -29,7 +29,7 @@ const UpdateObstacle = (entities, {time, dispatch}) => {
   let snakeX2 = snakeX + 25;
 
   for (let i = 1; i <= 10; i++) {
-    if (entities['Obstacle' + i].body.position.y > -50) {
+    if (entities['Obstacle' + i].body.position.y > 100) {
 
 
       if (entities['Obstacle' + i].body.position.y <= 150 && entities['Obstacle' + i].body.position.y >= 100 && (checkCollision('right',entities['Obstacle' + i].body.position.x, snakeX2 ) || checkCollision('left', entities['Obstacle' + i].body.position.x + 40, snakeX)) ){
@@ -48,10 +48,17 @@ const UpdateObstacle = (entities, {time, dispatch}) => {
         }
         Matter.Body.setPosition(entities['Obstacle'+i].body, {x:0, y:-50});
 
-      }else{
-        onScreenCounter += 1;
-        Matter.Body.translate(entities['Obstacle' + i].body, {x: 0, y: OBJECT_VELOCITY});
-        exisitingEntities.push(i);
+      }
+      else{
+
+        if(entities['Obstacle' + i].body.position.y <= 125){
+          Matter.Body.setPosition(entities['Obstacle'+i].body, {x:0, y:-50});
+        }else{
+          onScreenCounter += 1;
+          Matter.Body.translate(entities['Obstacle' + i].body, {x: 0, y: Constants.OBJECT_VELOCITY});
+          exisitingEntities.push(i);
+        }
+        
       }
 
       
