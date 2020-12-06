@@ -19,7 +19,7 @@ const ChooseMap = props => {
             <View style={{height:"20%", width:"100%"}}></View>
 
             <View style={{justifyContent:"center", width:"100%", paddingBottom:10}}>
-                <Text style={{color:"white",textAlign:"center"}}>Select Map</Text>
+                <Text style={{color:"white",textAlign:"center", fontSize: 30}}>Select Map</Text>
             </View>
 
             <View style={styles.container1}>

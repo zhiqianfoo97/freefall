@@ -7,7 +7,10 @@ const Trivia = (props) => {
 
     return (
         <TouchableOpacity  style={styles.trivia} onPress={()=>props.hideTrivia()}>
-            <Text style={{ height:'100%', color:'white', textAlign:'center', textAlignVertical:'center'}}>
+            <Text style={{ fontSize: 20, justifyContent: 'flex-start', color:'white', textAlign:'center'}}>
+                Did you know?
+            </Text>
+            <Text style={{ height:'70%', color:'white', textAlign:'center', textAlignVertical:'center'}}>
                 {fact}
             </Text>
         </TouchableOpacity >
@@ -25,7 +28,7 @@ const styles = StyleSheet.create({
         elevation:3,
         width: Constants.WIDTH,
         height: 200,
-        backgroundColor: 'gray',
+        backgroundColor: '#FF647C',
         
     },
 })

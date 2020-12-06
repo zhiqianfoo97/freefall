@@ -12,8 +12,16 @@ import TutorialPage3 from './Screen/TutorialPage3';
 import TutorialPage4 from './Screen/TutorialPage4';
 import TutorialPage5 from './Screen/TutorialPage5';
 import TutorialPage6 from './Screen/TutorialPage6';
+import LoginScreen from './Screen/LoginScreen';
+import RegistrationScreen from './Screen/RegistrationScreen';
 
 const App = createStackNavigator({
+  LoginScreen: {
+    screen: LoginScreen
+  },
+  RegistrationScreen: {
+    screen: RegistrationScreen
+  },
   LandingPage: {
     screen: LandingPage
   },
